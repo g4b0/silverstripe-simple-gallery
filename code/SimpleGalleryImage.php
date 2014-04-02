@@ -9,14 +9,15 @@ class SimpleGalleryImage extends DataObject {
 	);
 	public static $has_one = array(
 			'Image' => 'Image',
-			'Page' => 'Page'
+			'Page' => 'Page',
+			'Gallery' => 'SimpleGallery'
 	);
 
 	// tidy up the CMS by not showing these fields
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldFromTab("Root.Main", "PageID");
+		$fields->removeFieldFromTab("Root.Main", "DataObjectID");
 		$fields->removeFieldFromTab("Root.Main", "SortOrder");
 
 		return $fields;

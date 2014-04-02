@@ -1,32 +1,30 @@
 <?php
 
-class SimpleGallery extends DataExtension {
+/**
+ * Description of SimpleGallery
+ *
+ * @author Gabriele Brosulo <gabriele.brosulo@zirak.it>
+ * @creation-date 02-Apr-2014
+ */
+class SimpleGallery extends DataObject {
 
-  public static $has_many = array('Images' => 'SimpleGalleryImage');
+	private static $db = array(
+			'Name' => 'Varchar(255)',
+			'Description' => 'HTMLText',
+			'SortOrder' => 'Int'
+	);
+	private static $has_one = array(
+			'Page' => 'Page'
+	);
 
-  public function updateCMSFields(FieldList $fields) {
-    parent::updateCMSFields($fields);
-
-		$name = Config::inst()->get('SimpleGallery', 'gallery_name');
+	public function getCMSFields() {
+		$fields = parent::getCMSFields();
 		
-    if ($this->owner->ID > 0) {
-			$gridFieldConfig = GridFieldConfig_RecordEditor::create();;
-			$gridFieldConfig->addComponent(new GridFieldBulkImageUpload('Image', array('Title')));
-			$gridFieldSortableRows = new GridFieldSortableRows('SortOrder');
-			$gridFieldConfig->addComponent($gridFieldSortableRows->setAppendToTop(true));
-
-      $gridfield = new GridField("Gallery", $name, $this->SortedImages(), $gridFieldConfig);
-
-      $fields->addFieldToTab('Root.'.$name, $gridfield);
-    }
-
-    return $fields;
-  }
-
-  public function SortedImages() {
-    return $this->owner->Images()->sort("SortOrder");
-  }
-
+		$fields->removeByName('SortOrder');
+		$fields->removeByName('PageID');
+		
+		return $fields;
+	}
 }
 
-?>
+
