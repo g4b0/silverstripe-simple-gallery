@@ -1,4 +1,4 @@
-# Widgets Pages Extension
+# Simple Gallery
 
 A simple photogallery management module.
 
