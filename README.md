@@ -18,12 +18,16 @@ Install the module through [composer](http://getcomposer.org):
 
 	composer zirak/simple-gallery
 
+### Single gallery
+
 To have a single gallery per page extend the desired page type through the following yaml:
 
 	:::yml
 	Page:
 	  extensions:
 	    - SimpleGallery
+
+### Multiple gallery
 
 If you prefer to have multiple sortable gallery in a specific page type simply add an has_many relationship
 like the following example:
