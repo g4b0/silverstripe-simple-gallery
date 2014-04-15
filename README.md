@@ -25,7 +25,7 @@ To have a single gallery per page extend the desired page type through the follo
 	:::yml
 	Page:
 	  extensions:
-	    - SimpleGallery
+	    - SimpleGalleryExtension
 
 ### Multiple gallery
 
