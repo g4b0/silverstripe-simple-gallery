@@ -12,7 +12,7 @@ to the page. See example below.
 
  * SilverStripe 3.1
 
-### Installation
+## Installation
 
 Install the module through [composer](http://getcomposer.org):
 
