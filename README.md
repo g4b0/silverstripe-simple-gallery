@@ -27,6 +27,20 @@ To have a single gallery per page extend the desired page type through the follo
 	  extensions:
 	    - SimpleGalleryExtension
 
+## Template
+
+No default template is given, you have to write your own .ss files. Just loop over Images:
+
+```HTML
+<% loop Images %>
+	<% if $CustomLink %>
+	 <a href="$CustomLink">$Image</a>
+	<% else %>
+	 $Image
+	<% end_if %>
+<% end_loop %>
+```
+
 ### Multiple gallery
 
 If you prefer to have multiple sortable gallery in a specific page type simply add an has_many relationship
@@ -59,7 +73,7 @@ class Portfolio extends Page {
 }
 ```
 
-### Template
+## Template
 
 No default template is given, you have to write your own .ss files. Simply loop over $SortedGalleries, and then over $SortedImages
 
