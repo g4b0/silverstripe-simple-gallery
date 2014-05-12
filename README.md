@@ -18,7 +18,8 @@ to the page. See example below.
 
 Install the module through [composer](http://getcomposer.org):
 
-	composer zirak/simple-gallery
+	composer require zirak/simple-gallery
+  composer update
 
 ### Single gallery
 
