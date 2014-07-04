@@ -25,23 +25,39 @@ Install the module through [composer](http://getcomposer.org):
 
 To have a single gallery per page extend the desired page type through the following yaml:
 
-	:::yml
-	Page:
-	  extensions:
-	    - SimpleGalleryExtension
+```YAML
+Page:
+  extensions:
+    - SimpleGalleryExtension
+```
 
 ## Template
 
-No default template is given, you have to write your own .ss files. Just loop over Images:
+A really basic template is given, to use it just put this code into your Page template:
 
 ```HTML
-<% loop Images %>
+<% include simplegallery %>
+```
+
+For a nice visualization into the default SS template add this CSS code:
+
+```CSS
+.simplegallery img {width: 30%; float: left; margin: 10px;}
+```
+
+You have to write your own .ss files for more advanced features. Just overwrite template/simplegallery.ss into your theme and loop over 
+$SortedImages writing your HTML code:
+
+```HTML
+<div class="simplegallery">
+<% loop SortedImages %>
 	<% if $CustomLink %>
 	 <a href="$CustomLink">$Image</a>
 	<% else %>
 	 $Image
 	<% end_if %>
 <% end_loop %>
+</div>
 ```
 
 ### Multiple gallery
@@ -78,18 +94,39 @@ class Portfolio extends Page {
 
 ## Template
 
-No default template is given, you have to write your own .ss files. Simply loop over $SortedGalleries, and then over $SortedImages
+Just like simplegallery, a very basic template is given, to use it just put this code into your Page template:
+
+```HTML
+<% include simplegalleries %>
+```
+
+For a nice visualization into the default SS template add this CSS code:
+
+```CSS
+.simplegallery {clear: both;}
+.simplegallery img {width: 30%; float: left; margin: 10px;}
+```
+
+You have to write your own .ss files for more advanced features. Just overwrite template/simplegalleries.ss into your theme and loop 
+over $SortedGalleries, and then over $SortedImages
 
 ```HTML
 <% loop $SortedGalleries %>
-	<div>
+	<div class="simplegallery">
 		<article>
 			<h3>$Name</h3>
 			$Description
-			<% loop $SortedImages %>
-				$Image
+			<div>
+			<% loop SortedImages %>
+				<% if $CustomLink %>
+				 <a href="$CustomLink">$Image</a>
+				<% else %>
+				 $Image
+				<% end_if %>
 			<% end_loop %>
+			</div>
 		</article>
 	</div>
 <% end_loop %>
+
 ```

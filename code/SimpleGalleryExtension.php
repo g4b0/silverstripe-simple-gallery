@@ -17,7 +17,7 @@ class SimpleGalleryExtension extends DataExtension {
 			$gridFieldSortableRows = new GridFieldSortableRows('SortOrder');
 			$gridFieldConfig->addComponent($gridFieldSortableRows->setAppendToTop(true));
 
-      $gridfield = new GridField("Gallery", $name, $this->SortedImages(), $gridFieldConfig);
+      $gridfield = new GridField("Gallery", $name, $this->SortedImages(true), $gridFieldConfig);
 
       $fields->addFieldToTab('Root.'.$name, $gridfield);
     }
@@ -25,8 +25,15 @@ class SimpleGalleryExtension extends DataExtension {
     return $fields;
   }
 
-  public function SortedImages() {
-    return $this->owner->Images()->sort("SortOrder");
+  public function SortedImages($includeDisabled=false) {
+		$retVal = $this->owner->Images();
+		
+		if (!$includeDisabled) {
+			$retVal = $retVal->filter(array('Disabled' => 0));
+		}
+		
+		$retVal = $retVal->sort("SortOrder");
+    return $retVal;
   }
 
 }
