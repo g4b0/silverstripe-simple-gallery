@@ -16,15 +16,18 @@ class SimpleGallery extends DataObject {
 	private static $has_one = array(
 			'Page' => 'Page'
 	);
+	private static $summary_fields = array(
+			'Name',
+			'Description.Summary'
+	);
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
-		
+
 		$fields->removeByName('SortOrder');
 		$fields->removeByName('PageID');
-		
+
 		return $fields;
 	}
+
 }
-
-

@@ -31,7 +31,7 @@ Page:
     - SimpleGalleryExtension
 ```
 
-## Template
+#### Template
 
 A really basic template is given, to use it just put this code into your Page template:
 
@@ -92,7 +92,7 @@ class Portfolio extends Page {
 }
 ```
 
-## Template
+#### Template
 
 Just like simplegallery, a very basic template is given, to use it just put this code into your Page template:
 
@@ -128,5 +128,11 @@ over $SortedGalleries, and then over $SortedImages
 		</article>
 	</div>
 <% end_loop %>
-
 ```
+
+## Config
+
+Editing _config/simplegallery.yml it's possible to modify gallery behaviour:
+
+	* gallery_name: The gallery name that appear in backend tabs (default: Gallery)
+  * folder_path: path where the uploaded images are stored (default: simplegallery)

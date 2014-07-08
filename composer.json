@@ -2,7 +2,7 @@
     "name": "zirak/simple-gallery",
     "description": "A simple photogallery management module",
     "type": "silverstripe-module",
-    "keywords": ["silverstripe", "gallery", "photogallery"],
+    "keywords": ["silverstripe", "gallery", "photogallery", "image"],
     "license": "GPL-2",
     "authors": [{
         "name": "Gabriele Brosulo - Zirak",

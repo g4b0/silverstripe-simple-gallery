@@ -20,6 +20,17 @@ class SimpleGalleryImage extends DataObject {
 
 		$fields->removeFieldFromTab("Root.Main", "DataObjectID");
 		$fields->removeFieldFromTab("Root.Main", "SortOrder");
+		$fields->removeByName('PageID');
+		$fields->removeByName('GalleryID');
+
+		$folder = Config::inst()->get('SimpleGalleryExtension', 'folder_path');
+		if (strlen($folder) == 0) {
+			$folder = 'simplegallery';
+		}
+
+		$field = new UploadField('Image');
+		$field->setFolderName($folder);
+		$fields->insertAfter($field, 'CustomLink');
 
 		return $fields;
 	}
@@ -46,7 +57,7 @@ class SimpleGalleryImage extends DataObject {
 	public function getModifiedSortOrder($modifier) {
 		return $this->SortOrder + $modifier;
 	}
-	
+
 	/**
 	 * Tutti possono visualizzare il DataObject
 	 * @param type $member

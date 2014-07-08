@@ -3,6 +3,4 @@ Name: simplegallery
 ---
 SimpleGalleryExtension:
   gallery_name: Gallery
-SimpleGallery:
-  extensions:
-    - SimpleGalleryExtension
+  folder_path: simplegallery/test

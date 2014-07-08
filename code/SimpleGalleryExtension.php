@@ -12,8 +12,16 @@ class SimpleGalleryExtension extends DataExtension {
 		$name = Config::inst()->get('SimpleGalleryExtension', 'gallery_name');
 		
     if ($this->owner->ID > 0) {
+			
+			$folder = Config::inst()->get('SimpleGalleryExtension', 'folder_path');
+			if (strlen($folder) == 0) {
+				$folder = 'simplegallery';
+			}
+			
 			$gridFieldConfig = GridFieldConfig_RecordEditor::create();;
-			$gridFieldConfig->addComponent(new GridFieldBulkImageUpload('Image', array('Title')));
+			$bu = new GridFieldBulkImageUpload('Image', array('Title'));
+			$bu->setConfig('folderName', $folder);
+			$gridFieldConfig->addComponent($bu);
 			$gridFieldSortableRows = new GridFieldSortableRows('SortOrder');
 			$gridFieldConfig->addComponent($gridFieldSortableRows->setAppendToTop(true));
 

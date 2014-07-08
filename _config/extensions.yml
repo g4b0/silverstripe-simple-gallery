@@ -1,0 +1,6 @@
+---
+Name: simplegallery-extensions
+---
+SimpleGallery:
+  extensions:
+    - SimpleGalleryExtension
