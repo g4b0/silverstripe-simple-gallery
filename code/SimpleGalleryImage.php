@@ -5,6 +5,7 @@ class SimpleGalleryImage extends DataObject {
 	public static $db = array(
 			'SortOrder' => 'Int',
 			'Title' => 'Varchar',
+			'Text' => 'Text',
 			'CustomLink' => 'Varchar(255)',
 			'Disabled' => 'Boolean'
 	);
@@ -30,7 +31,7 @@ class SimpleGalleryImage extends DataObject {
 
 		$field = new UploadField('Image');
 		$field->setFolderName($folder);
-		$fields->insertAfter($field, 'CustomLink');
+		$fields->insertAfter($field, 'Text');
 
 		return $fields;
 	}

@@ -60,6 +60,14 @@ $SortedImages writing your HTML code:
 </div>
 ```
 
+You can access the following image variable:
+
+$CustomLink
+$Title
+$Text
+$Disabled
+$SortOrder
+
 ### Multiple gallery
 
 If you prefer to have multiple sortable gallery in a specific page type simply add an has_many relationship
