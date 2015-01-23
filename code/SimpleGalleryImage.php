@@ -5,7 +5,10 @@ class SimpleGalleryImage extends DataObject {
 	public static $db = array(
 			'SortOrder' => 'Int',
 			'Title' => 'Varchar',
+			'SubTitle' => 'Varchar',
 			'Text' => 'Text',
+			'ButtonText' => 'Varchar(255)',
+			'ButtonLink' => 'Varchar(255)',
 			'CustomLink' => 'Varchar(255)',
 			'Disabled' => 'Boolean'
 	);
