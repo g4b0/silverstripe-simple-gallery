@@ -9,9 +9,9 @@
         "email": "gabriele.brosulo@zirak.it"
     }],
     "require": {
-        "silverstripe/framework": "3.1.*",
-        "silverstripe/cms": "3.1.*",
-        "colymba/gridfield-bulk-editing-tools": "1.6.0",
+        "silverstripe/framework": "^3.1",
+        "silverstripe/cms": "^3.1",
+        "colymba/gridfield-bulk-editing-tools": "^2.1",
         "undefinedoffset/sortablegridfield" : "0.*"
     }
 }
