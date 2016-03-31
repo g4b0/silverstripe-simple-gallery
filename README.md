@@ -10,9 +10,9 @@ to the page. See example below.
 
 ## Requirements
 
- * SilverStripe 3.1
- * colymba/gridfield-bulk-editing-tools
- * undefinedoffset/sortablegridfield
+ * SilverStripe ^3.1
+ * colymba/gridfield-bulk-editing-tools ^2.1
+ * undefinedoffset/sortablegridfield 0.*
 
 ## Installation
 
