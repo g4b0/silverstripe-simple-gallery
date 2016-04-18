@@ -19,8 +19,8 @@ class SimpleGalleryExtension extends DataExtension {
 			}
 			
 			$gridFieldConfig = GridFieldConfig_RecordEditor::create();;
-			$bu = new GridFieldBulkImageUpload('Image', array('Title'));
-			$bu->setConfig('folderName', $folder);
+			$bu = new GridFieldBulkUpload('Image', array('Title'));
+			$bu->setUfConfig('folderName', $folder);
 			$gridFieldConfig->addComponent($bu);
 			$gridFieldSortableRows = new GridFieldSortableRows('SortOrder');
 			$gridFieldConfig->addComponent($gridFieldSortableRows->setAppendToTop(true));
