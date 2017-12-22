@@ -10,16 +10,19 @@ to the page. See example below.
 
 ## Requirements
 
- * SilverStripe 3.1
- * colymba/gridfield-bulk-editing-tools
- * undefinedoffset/sortablegridfield
+ * SilverStripe ^4.0 (version master/4+)
+ * SilverStripe ^3.1 (version 1.+ / 3.+)
+ * colymba/gridfield-bulk-editing-tools ^3.0.* (version master/4+)
+ * colymba/gridfield-bulk-editing-tools ^2.1.* (version 1.+ / 3.+) 
+ * undefinedoffset/sortablegridfield ^2.0.* (version master/4+)
+ * undefinedoffset/sortablegridfield ^0.* (version 1.+ / 3.+)
 
 ## Installation
 
 Install the module through [composer](http://getcomposer.org):
 
-	composer require zirak/simple-gallery
-  composer update
+    composer require zirak/simple-gallery
+    composer update
 
 ### Single gallery
 
