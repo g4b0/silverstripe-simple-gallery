@@ -16,7 +16,7 @@
         "silverstripe/framework": "^4@dev",
         "silverstripe/cms": "^4@dev",
         "colymba/gridfield-bulk-editing-tools": "dev-master",
-        "undefinedoffset/sortablegridfield" : "^2.0"
+        "undefinedoffset/sortablegridfield" : "dev-master"
     },
     "extra": {
         "branch-alias": {
