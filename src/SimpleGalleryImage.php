@@ -2,6 +2,10 @@
 
 namespace g4b0\SimpleGallery;
 
+use SilverStripe\ORM\DataObject;
+use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\Security\PermissionProvider;
+
 /**
  * SimpleGalleryImage
  *
@@ -10,7 +14,7 @@ namespace g4b0\SimpleGallery;
  */
 class SimpleGalleryImage extends DataObject {
 
-    public static $db = array(
+    private static $db = [
         'SortOrder' => 'Int',
         'Title' => 'Varchar',
         'SubTitle' => 'Varchar',
@@ -19,12 +23,19 @@ class SimpleGalleryImage extends DataObject {
         'ButtonLink' => 'Varchar(255)',
         'CustomLink' => 'Varchar(255)',
         'Disabled' => 'Boolean'
-    );
-    public static $has_one = array(
+    ];
+    private static $has_one = [
         'Image' => 'Image',
         'Page' => 'Page',
         'Gallery' => 'SimpleGallery'
-    );
+    ];
+    // Tell the datagrid what fields to show in the table
+    private static $summary_fields = [
+        'ID' => 'ID',
+        'Title' => 'Title',
+        'Thumbnail' => 'Thumbnail'
+    ];
+    private static $table_name = 'SimpleGallery_SimpleGalleryImage';
 
     // tidy up the CMS by not showing these fields
     public function getCMSFields() {
@@ -47,12 +58,7 @@ class SimpleGalleryImage extends DataObject {
         return $fields;
     }
 
-    // Tell the datagrid what fields to show in the table
-    public static $summary_fields = array(
-        'ID' => 'ID',
-        'Title' => 'Title',
-        'Thumbnail' => 'Thumbnail'
-    );
+    
 
     // this function creates the thumnail for the summary fields to use
     public function getThumbnail() {
@@ -84,7 +90,7 @@ class SimpleGalleryImage extends DataObject {
             return true;
     }
 
-    public function canCreate($member = null) {
+    public function canCreate($member = null, $context = array()) {
         if (Permission::check('SIMPLE_GALLERY_IMAGE_MANAGE'))
             return true;
     }

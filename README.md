@@ -21,7 +21,7 @@ to the page. See example below.
 
 Install the module through [composer](http://getcomposer.org):
 
-    composer require zirak/simple-gallery
+    composer require g4b0/simple-gallery
     composer update
 
 ### Single gallery
@@ -31,7 +31,7 @@ To have a single gallery per page extend the desired page type through the follo
 ```YAML
 Page:
   extensions:
-    - SimpleGalleryExtension
+    - g4b0\SimpleGallery\SimpleGalleryExtension
 ```
 
 #### Template

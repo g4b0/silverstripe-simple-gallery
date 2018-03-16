@@ -24,6 +24,7 @@ class SimpleGallery extends DataObject {
         'Name',
         'Description.Summary'
     ];
+    private static $table_name = 'SimpleGallery_SimpleGallery';
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();

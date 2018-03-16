@@ -3,6 +3,8 @@
 namespace g4b0\SimpleGallery;
 
 use SilverStripe\ORM\DataObject;
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\Forms\FieldList;
 
 /**
  * SimpleGalleryExtension
@@ -12,7 +14,9 @@ use SilverStripe\ORM\DataObject;
  */
 class SimpleGalleryExtension extends DataExtension {
 
-    public static $has_many = array('Images' => 'SimpleGalleryImage');
+    private static $has_many = [
+        'Images' => 'SimpleGalleryImage'
+    ];
 
     public function updateCMSFields(FieldList $fields) {
         parent::updateCMSFields($fields);

@@ -3,7 +3,7 @@
     "description": "A simple photogallery management module",
     "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "gallery", "photogallery", "photo", "image"],
-    "license": "GPL-2",
+    "license": "GPL-2.0-only",
     "authors": [{
         "name": "Gabriele Brosulo",
         "email": "gabriele@brosulo.net"
