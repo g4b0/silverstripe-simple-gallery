@@ -12,11 +12,10 @@
         "issues": "https://github.com/g4b0/silverstripe-simple-gallery/issues"
     },
     "require": {
-        "silverstripe/vendor-plugin": "^1.0",
-        "silverstripe/framework": "^4@dev",
-        "silverstripe/cms": "^4@dev",
-        "colymba/gridfield-bulk-editing-tools": "dev-master",
-        "undefinedoffset/sortablegridfield" : "dev-master"
+        "silverstripe/framework": "^4",
+        "silverstripe/cms": "^4",
+        "colymba/gridfield-bulk-editing-tools": "^3",
+        "undefinedoffset/sortablegridfield" : "^2"
     },
     "extra": {
         "branch-alias": {
@@ -28,5 +27,6 @@
             "g4b0\\SimpleGallery\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

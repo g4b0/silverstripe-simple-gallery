@@ -1,6 +1,6 @@
 ---
 Name: simplegallery-extensions
 ---
-SimpleGallery:
+g4b0\SimpleGallery\SimpleGallery:
   extensions:
-    - SimpleGalleryExtension
+    - g4b0\SimpleGallery\SimpleGalleryExtension
