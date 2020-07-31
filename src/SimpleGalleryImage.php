@@ -3,6 +3,7 @@
 namespace g4b0\SimpleGallery;
 
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Assets\Image;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\CMS\Controllers\ContentController;
@@ -29,9 +30,9 @@ class SimpleGalleryImage extends DataObject
         'Disabled'   => 'Boolean',
     ];
     private static $has_one = [
-        'Image'   => 'Image',
-        'Page'    => 'Page',
-        'Gallery' => 'SimpleGallery',
+        'Image'   => Image::class,
+        'Page'    => \Page::class,
+        'Gallery' => SimpleGallery::class,
     ];
     // Tell the datagrid what fields to show in the table
     private static $summary_fields = [

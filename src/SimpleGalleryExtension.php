@@ -2,12 +2,14 @@
 
 namespace g4b0\SimpleGallery;
 
+use Colymba\BulkUpload\BulkUploader;
 use Colymba\BulkUpload\BulkUploadField;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Forms\FieldList;
+use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 
 /**
  * SimpleGalleryExtension
@@ -38,8 +40,9 @@ class SimpleGalleryExtension extends DataExtension
             }
 
             $gridFieldConfig = GridFieldConfig_RecordEditor::create();;
-            $bu = new BulkUploadField('Image', array('Title'));
-            $bu->setConfig('folderName', $folder);
+//            $bu = new BulkUploadField('Image', ['Title']);
+            $bu = new BulkUploader();
+            $bu->setUfSetup('setFolderName', $folder);
             $gridFieldConfig->addComponent($bu);
             $gridFieldSortableRows = new GridFieldSortableRows('SortOrder');
             $gridFieldConfig->addComponent($gridFieldSortableRows->setAppendToTop(true));
