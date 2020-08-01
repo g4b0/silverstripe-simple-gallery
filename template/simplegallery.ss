@@ -1,5 +1,5 @@
 <div class="simplegallery">
-    <% loop SortedImages %>
+    <% loop $SortedImages %>
         <% if $CustomLink %>
             <a href="$CustomLink">$Image</a>
         <% else %>

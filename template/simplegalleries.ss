@@ -4,7 +4,7 @@
         <h3>$Name</h3>
         $Description
         <div>
-            <% loop SortedImages %>
+            <% loop $SortedImages %>
                 <% if $CustomLink %>
                     <a href="$CustomLink">$Image</a>
                 <% else %>

@@ -1,1 +1,4 @@
-/nbproject
+composer.lock
+vendor
+resources
+assets
